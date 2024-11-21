@@ -8,6 +8,7 @@
   padding: 0;
   /* outline: 1px dashed #000000; */
 }
+
 html{
      font-size: 16px;  /* 1rem used on the page =  16px*/
     box-sizing: border-box;
@@ -16,7 +17,6 @@ html{
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fff;
-
 }
 
 a{
@@ -42,6 +42,10 @@ nav{
     background-color: #fff;
     justify-content: space-between;
     height: 4rem;
+    /* sticky bar */
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
 }
 
 nav ul{
@@ -90,7 +94,6 @@ nav > a{
 
 /* Set up navigation links' styles */
 
-
 /* Set up header area */
 
 header{
@@ -103,7 +106,6 @@ header{
 .imgcontainer{
     padding: 2rem 1.5rem;   /* Render padding of the container as required */
 }
-
 
 header > img{
     max-width: 100%;    /* Set the max width img can take */
@@ -139,12 +141,11 @@ header div > a{
 
 /* hover effect for call to action link */
 
-
 /* Set up practice section */
 
 .practice{
     display: flex;                  /* Enable flexbox layout  */
-    /* align-items: center;            Centers content vertically */
+    align-items: center;            /* Centers content vertically */
     justify-content: flex-start;        /* Center content to the top */
     flex-direction: column;
 }
@@ -196,30 +197,155 @@ header div > a{
     padding-top: 2rem;
 }
 
-.events img{
+.events .events-block:last-child{
+    background-color: #d8d8d8;
+}
+
+.events > .events-block > .events-img-desktop{
     width: 100%;
     height: auto;
 }
 
-.events .events-text{
-    margin-left: 1rem;
-    /* border: 1px solid black; */
+.events > .events-block > .events-text{
+    margin-left: 1.5rem;
     height: 100%;
     align-content: center;
 }
 
-.events .events-text h3{
+.events > .events-block > .events-text h3{
     font-size: large;
 }
 
-.events .events-text p{
+.events > .events-block > .events-text p{
     font-size: small;
 }
 
-
-.events .events-text a{
+.events > .events-block > .events-text a{
     font-size: small;
     color: #3434c6;
+}
+
+/* Set up Learning section */
+
+.learning-header{
+    display: grid;
+    grid-column: full-start / full-end;
+    text-align: center;
+    padding: 2rem 0;   
+    background-color: #d8d8d8;
+}
+
+.learning-whole{
+    display: grid;
+    grid-column: full-start / full-end;
+    width: 100%;
+    height: auto;
+    background-color: #d8d8d8;
+    padding-bottom: 2rem;
+}
+
+.learning-section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin: 0 4.5rem 2rem 4.5rem;
+}
+
+.learning-section img{
+    height: auto;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.learning-text{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: auto;
+    height: 8rem;
+    padding: 1.5rem 10rem 1.5rem 1.5rem;
+} 
+
+.learning-text > p{
+    color: #6e6e6e;
+}
+
+/* Start of Thesis section */
+
+.exhibit-header{
+    display: grid;
+    grid-column: full-start / full-end;
+    text-align: center;
+    padding: 2rem 0; 
+}
+
+.exhibit{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.exhibit .vidcontainer{
+    height: auto;
+    width: 100%;
+}
+
+.exhibit > .exhibit-text{
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.exhibit > .exhibit-text > h1{
+    padding-bottom: 0.5rem;
+}
+
+.exhibit > .exhibit-text > p{
+    color: #444444;
+}
+
+/* Start of Fisma Section */
+
+.fisma{
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+}
+
+.fisma > .fisma-block{
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    align-items: center;
+    padding: 1rem;
+}
+
+.fisma > .fisma-block:first-child{
+    background-color: #d8d8d8;
+    margin-right: 0.5rem;
+}
+
+.fisma > .fisma-block > .fisma-img{
+    width: 100%;
+    height: auto;
+}
+
+.fisma > .fisma-block > .fisma-text{
+    margin-left: 1rem;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+}
+
+.fisma > .fisma-block > .fisma-text > h3{
+    padding-bottom: 1.5rem;
+}
+
+.fisma > .fisma-block > .fisma-text > p{
+    color: #444444;
 }
 
 /* Set up footer */
@@ -230,13 +356,14 @@ footer{
     grid-column: full-start / full-end;
     justify-content: space-between;
     border-top: 1px solid #e7e7e7;
-    padding-bottom: 1rem 1.5rem 2rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
 }
 
 footer > ul{
     list-style: none;
     display: flex;
-    /* border: 1px solid black; */
 }
 
 footer > ul > li{
@@ -244,20 +371,27 @@ footer > ul > li{
 }
 
 footer > ul > li > a{
-    color: #3434c6;
-}
-
-footer > ul > li > a:visited{
     color: #525252;
 }
 
+footer > ul > li > a:hover{
+    color: #3434c6;
+}
 
-/* Hide events mobile */
+/* Hide Navigation Mobile */
 
+#nav-mobile{
+    display: none;
+}
+
+/* Hide events mobile image*/
+
+.events > .events-block > .events-img-mobile{
+    display: none;
+}
 
 /** ********************** **/
 /** End of Desktop Section **/
-
 
 /* TODO */
 
@@ -266,9 +400,156 @@ footer > ul > li > a:visited{
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
-    
 
+/* Hide the desktop <nav> */
+
+nav, .practice{
+    display: none;
 }
 
+/* Display Mobile Nav */
+
+#nav-mobile{
+    display: flex;
+    height: 4rem;
+    justify-content: space-between;
+    grid-column: full-start / full-end;
+    align-items: center;
+}
+
+.logo{
+    margin-left: 0.2rem;
+}
+
+/* Set the header image to takeup the entire viewport width */
+header{
+    display: grid;
+    grid-column: full-start / full-end;
+}
+
+.imgcontainer {
+padding: 0;
+}
+
+header > div{
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 2rem 1rem;
+}
+
+header > div > h2{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Hide desktop events image for mobile  */
+
+.events > .events-block > .events-img-desktop{
+    display: none;
+}
+
+/* Start of events section for mobile */
+
+.events{
+    display: grid;
+    grid-column: full-start / full-end;
+    border-left: none;
+}
+
+.events > .events-block {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1rem 0 1rem;
+    border-bottom: none;
+}
+
+.events > .events-block > .events-img-mobile{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.events > .events-block > .events-text{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+}
+
+/* Change background color of events last child to white in mobile view */
+
+.events .events-block:last-child{
+    background-color: #ffffff;
+    padding-bottom: 2rem;
+}
+
+/* Hide image and desc of learning image for mobile  */
+
+.learning-img-mobile{
+    display: none;
+}
+
+.learning-header{
+    border-top: 1px solid #d8d8d8;
+}
+
+
+.learning-text > p{
+    display: none;
+}
+
+/* Start of learning section for mobile */
+
+.learningwhole > .learning-section > img{
+    display: none;
+}
+
+.learning-header, .learning-whole{
+    background-color: #ffffff;
+}
+
+.learning-whole > .learning-section{
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    margin-right: 2rem;
+}
+
+.learning-text{
+    background-color: #adadad;
+    height: 2rem;
+}
+
+/* Hide of exhibit text and Fisma section for mobile */
+
+.fisma, .exhibit > .exhibit-text{
+    display: none;
+}
+
+/* Start of Thesis Exhibit for mobile */
+
+.exhibit{
+    display: grid;
+    grid-column: full-start / full-end;
+}
+
+.exhibit-header{
+    border-top: 1px solid #d8d8d8;
+}
+
+
+/** Hide footer border when in mobile mode **/
+footer{
+    border-top: 1px solid #ffffff;
+}
+
+footer > ul{
+    display: none;
+}
+
+}
 /* *********************** */
 /** End of Mobile Section **/
