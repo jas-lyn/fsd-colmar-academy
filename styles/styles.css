@@ -94,6 +94,12 @@ nav > a{
 
 /* Set up navigation links' styles */
 
+nav ul li a:hover {
+    transition: 0.3s;
+    color: #3f31fa;
+    text-decoration: underline;
+}
+
 /* Set up header area */
 
 header{
@@ -141,6 +147,12 @@ header div > a{
 
 /* hover effect for call to action link */
 
+header a:hover {
+    transition: 0.5s;
+    color: #000000;
+    transform: scale(1.2)
+}
+
 /* Set up practice section */
 
 .practice{
@@ -175,7 +187,6 @@ header div > a{
     font-weight: bold;
     padding: 2rem 0;
 }
-
 
 /* Set up events section */
 
