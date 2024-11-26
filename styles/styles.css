@@ -527,6 +527,7 @@ header > div > h2{
     flex-direction: column;
     color: #000000;
     margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 .learning-text{
